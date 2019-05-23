@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,9 +20,16 @@ namespace FlightController
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            frMenu m = new frMenu();
-            m.Show();
-            this.Hide();
+            InitDB inicializador = new InitDB();
+            if (string.IsNullOrEmpty(txtServidor.Text))
+                MessageBox.Show("Informe pelo menos o server!");
+            else
+            {
+                inicializador.CriarDB(txtServidor.Text, txtUsuario.Text, txtSenha.Text);
+                frMenu m = new frMenu();
+                m.Show();
+                this.Hide();
+            }
         }
     }
 }

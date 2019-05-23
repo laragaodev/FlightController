@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,13 +11,14 @@ namespace Library.DAO
 {
     class MetodosBD
     {
-        public static void ExecutaSQL(string sql, SqlParameter[] parametros)
+        public static void ExecutaSQL(string sql, SqlParameter[] parametros = null)
         {
             using (SqlConnection conexao = ConexaoBD.GetConexao())
             {
                 using (SqlCommand comando = new SqlCommand(sql, conexao))
                 {
-                    comando.Parameters.AddRange(parametros);
+                    if (parametros != null)
+                        comando.Parameters.AddRange(parametros);
                     comando.ExecuteNonQuery();
                     conexao.Close();
                 }
@@ -86,6 +88,19 @@ namespace Library.DAO
                     comando.Parameters["retorno"].Direction = ParameterDirection.ReturnValue;
                     comando.ExecuteNonQuery();
                     return comando.Parameters["retorno"].Value.ToString();
+                }
+            }
+        }
+
+        public static void CriaBanco()
+        {
+            string script = File.ReadAllText("create-database.sql");
+            using (SqlConnection cx = ConexaoBD.GetCreationConnection())
+            {
+                using (SqlCommand comando = new SqlCommand(script, cx))
+                {
+                    comando.ExecuteNonQuery();
+                    cx.Close();
                 }
             }
         }

@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="DAO\AircraftDAO.cs" />
     <Compile Include="DAO\ConexaoBD.cs" />
     <Compile Include="DAO\FlightDAO.cs" />
@@ -48,6 +47,7 @@
     <Compile Include="DAO\PadraoDAO.cs" />
     <Compile Include="DAO\PilotDAO.cs" />
     <Compile Include="Enums\EnumModoOperacao.cs" />
+    <Compile Include="InitiDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VO\AircraftVO.cs" />
     <Compile Include="VO\FlightVO.cs" />

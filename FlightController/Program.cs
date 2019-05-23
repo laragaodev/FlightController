@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +17,11 @@ namespace FlightController
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frLogin());
+            if (!File.Exists("credenciais-db.txt"))
+                Application.Run(new frLogin());
+            else
+                Application.Run(new frMenu());
+
         }
     }
 }
