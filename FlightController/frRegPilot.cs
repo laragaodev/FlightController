@@ -19,7 +19,7 @@ namespace FlightController
         {
             InitializeComponent();
             cadastroDAO = new PilotDAO();
-            SugereProximoId = true;
+            SugereProximoId = true;            
         }
 
         protected override void PreencheTela(PadraoVO o)
@@ -70,13 +70,17 @@ namespace FlightController
             sp.ShowDialog();
         }
 
-        private void btnPrimeiro_Click(object sender, EventArgs e)
+        private void btnGetImage_Click(object sender, EventArgs e)
         {
-            PilotDAO p = new PilotDAO();
-            p.Primeiro("spBuscaPrimeiro");
+            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPEG|*.jpg", ValidateNames = true, Multiselect = false })
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    string filename = ofd.FileName;
+                    pictureBox1.Image = Image.FromFile(filename);
+                }
+            }
         }
-
-
     }
     
     

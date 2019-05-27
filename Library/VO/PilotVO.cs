@@ -12,6 +12,7 @@ namespace Library.VO
         private int license_id;
         private char gender;
         private DateTime birth_date;
+        public string image_path { get; set; }
         
 
         public string Name

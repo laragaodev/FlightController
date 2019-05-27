@@ -23,3 +23,10 @@ C:\Users\Admin\Documents\GitHub\flight-controller\flight-controller\Library\obj\
 C:\Users\Admin\Documents\GitHub\flight-controller\flight-controller\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Documents\GitHub\flight-controller\flight-controller\Library\obj\Debug\Library.dll
 C:\Users\Admin\Documents\GitHub\flight-controller\flight-controller\Library\obj\Debug\Library.pdb
+C:\Users\USUARIO\Videos\Nova pasta\FlightController\Library\obj\Debug\Library.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\Library\bin\Debug\Library.dll
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\Library\bin\Debug\Library.pdb
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\Library\obj\Debug\Library.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\Library\obj\Debug\Library.dll
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\Library\obj\Debug\Library.pdb

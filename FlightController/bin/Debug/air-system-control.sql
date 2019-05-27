@@ -22,7 +22,7 @@ title varchar(15)
 GO
 
 CREATE TABLE pilots (
-id int identity(1,1) primary key,
+id int primary key,
 [name] varchar(50),
 license_id int,
 gender char,
@@ -224,18 +224,21 @@ END
 GO
 
 CREATE PROCEDURE sp_create_pilot (
+@id int,
 @name varchar(50),
 @license_id int,
-@gender bit,
-@birth_date varchar
+@gender char(1),
+@birth_date date
 ) AS 
 BEGIN 
  INSERT INTO pilots (
-	name,
+	id,
+	[name],
 	license_id,
 	gender,
 	birth_date
  ) VALUES (
+	@id,
 	@name,
 	@license_id,
 	@gender,
@@ -246,13 +249,16 @@ END
 GO
 
 CREATE PROCEDURE sp_search_pilot (
-@name varchar(50),
-@license_id int,
-@gender bit,
-@birth_date varchar
+@name varchar(50) = NULL,
+@id int = NULL,
+@license_id int = NULL,
+@gender char(1) = NULL,
+@birth_date varchar = NULL
 ) AS 
 BEGIN 
 	DECLARE @where varchar, @query varchar 
+	IF(@id != NULL) 
+		SET @where = CONCAT(' ', 'id = ', @id , ' ') 
 	IF(@name != NULL) 
 		SET @where = CONCAT(' ', 'name = ', @name , ' ') 
 	IF(@license_id != -1)  
@@ -290,6 +296,17 @@ CREATE PROCEDURE sp_delete_aircrafts_by_id(@aircraft_id int) AS
 BEGIN 
 	DELETE FROM aircrafts where id = @aircraft_id 
 END
+
+GO
+
+CREATE PROCEDURE sp_next_pilot (@current int = NULL) 
+AS
+BEGIN
+	IF(@current IS NULL) 
+		SELECT (MAX(id) + 1) FROM pilots 
+	ELSE 
+		SELECT TOP 1 * FROM pilots WHERE id < @current ORDER BY id 
+END 
 
 GO
 

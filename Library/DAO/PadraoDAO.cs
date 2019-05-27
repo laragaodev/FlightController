@@ -11,152 +11,77 @@ namespace Library.DAO
 {
     public abstract class PadraoDAO
     {
-        protected string Tabela { get; set; }
-        protected string Chave { get; set; } = "id"; // valor default
+        protected string ProcInsert { get; set; }
+        protected string ProcUpdate { get; set; }
+        protected string ProcProximoId { get; set; }
+        protected string ProcDelete { get; set; }
+        protected string ProcConsulta { get; set; }
+        protected string ProcPrimeiro { get; set; }
+        protected string ProcUltimo { get; set; }
+        protected string ProcAnterior { get; set; }
+        protected string ProcProximo { get; set; }
+
+
         protected abstract SqlParameter[] CriaParametros(PadraoVO o);
+
         protected abstract PadraoVO MontaVO(DataRow dr);
 
-
-        protected virtual string MontaSQLDelete()
-        {
-            return $"delete {Tabela} where {Chave} = @id";
-        }
-        protected virtual string MontaSQLConsulta()
-        {
-            return $"select * from {Tabela} where {Chave} = @id";
-        }
         
-        //public virtual void Inserir(PadraoVO o)
-        //{
-        //    if (Consulta(o.Id) != null)
-        //        throw new Exception("Este código já está sendo utilizado!");
-        //    string sql = MontaSQLInsert();
-        //    MetodosBD.ExecutaSQL(sql, CriaParametros(o));
-        //}
-       
-        //public virtual void Alterar(PadraoVO o)
-        //{
-        //    string sql = MontaSQLUpdate();
-        //    MetodosBD.ExecutaSQL(sql, CriaParametros(o));
-        //}
 
-
-        //public virtual void Excluir(int Id)
-        //{
-        //    string sql = MontaSQLDelete();
-        //    SqlParameter[] parametros = new SqlParameter[1];
-        //    parametros[0] = new SqlParameter(Chave, Id);
-        //    MetodosBD.ExecutaSQL(sql, parametros);
-        //}       
-        
-       
-        //public virtual int ProximoId()
-        //{
-        //    string sql = $"select isnull(max({Chave})+1,1) from {Tabela}";
-        //    using (SqlConnection cx = ConexaoBD.GetConexao())
-        //    {
-        //        SqlCommand cmd = new SqlCommand(sql, cx);
-        //        return Convert.ToInt32(cmd.ExecuteScalar());
-        //    }
-        //}
-        
-        //public virtual PadraoVO Primeiro()
-        //{
-        //    string sql = $"select top 1 * from {Tabela} order by {Chave}";
-        //    return ExecutaSqlLocal(sql, null);
-        //}
-
-
-        //public virtual PadraoVO Ultimo()
-        //{
-        //    string sql = $"select top 1 * from {Tabela} order by {Chave} desc";
-        //    DataTable tabela = MetodosBD.ExecutaSelect(sql, null);
-        //    return ExecutaSqlLocal(sql, null);
-        //}
-        
-        //public virtual PadraoVO Proximo(int atual)
-        //{
-        //    string sql = $"select top 1 * from {Tabela} where {Chave} > @Atual order by {Chave} ";
-        //    SqlParameter[] p =
-        //    {
-        //        new SqlParameter("Atual", atual)
-        //    };
-        //    return ExecutaSqlLocal(sql, p);
-        //}
-        
-        //public virtual PadraoVO Anterior(int atual)
-        //{
-        //    string sql = $"select top 1 * from {Tabela} where {Chave} < @Atual order by {Chave} desc";
-        //    SqlParameter[] p =
-        //    {
-        //        new SqlParameter("Atual", atual)
-        //    };
-        //    return ExecutaSqlLocal(sql, p);
-        //}
-       
-        //protected PadraoVO ExecutaSqlLocal(string sql, SqlParameter[] parametros)
-        //{
-        //    DataTable tabela = MetodosBD.ExecutaSelect(sql, parametros);
-        //    if (tabela.Rows.Count == 0)
-        //        return null;
-        //    else
-        //        return MontaVO(tabela.Rows[0]);
-        //}
-
-        public PadraoVO Consulta(int id, string procName)
+        public virtual void Inserir(PadraoVO o)
         {
-            SqlParameter[] parametros = { new SqlParameter("id", id) };
-            DataTable tabela = MetodosBD.ExecutaProcResultSet(procName, parametros);
-            return ObjetoOuNull(tabela);
+            if (Consulta(o.Id) != null)
+                throw new Exception("Este código já está sendo utilizado!");
+
+            string sql = ProcInsert;
+            MetodosBD.ExecutaProcedure(sql, CriaParametros(o));
         }
 
-        public void Incluir(PadraoVO p, string procName)
+        public virtual void Alterar(PadraoVO o)
         {
-            MetodosBD.ExecutaProcedure(procName, CriaParametros(p));
+            string sql = ProcUpdate;
+            MetodosBD.ExecutaProcedure(sql, CriaParametros(o));
         }
 
-        public void Alterar(PadraoVO p, string procName)
+        public virtual void Excluir(int Id)
         {
-            MetodosBD.ExecutaProcedure(procName, CriaParametros(p));
+            string sql = ProcDelete;
+            SqlParameter[] parametros = new SqlParameter[1];
+            parametros[0] = new SqlParameter("@id", Id);
+            MetodosBD.ExecutaProcedure(sql, parametros);
         }
 
-        public void Excluir(int id, string procName)
+        public PadraoVO Consulta(int id)
         {
-            SqlParameter[] parametro = { new SqlParameter("id", id) };
-            MetodosBD.ExecutaProcedure(procName, parametro);
-        }  
+            using (SqlConnection cx = ConexaoBD.GetConexao())
+            {
+                string sql = ProcConsulta;
+                SqlParameter[] parametros =
+                {
+                    new SqlParameter("@id", id)
+                };
 
+                return ExecutaSqlLocal(sql, parametros);
 
-        public PadraoVO Primeiro(string procName)
-        {
-            DataTable tabela = MetodosBD.ExecutaProcResultSet(procName, null);
-            return ObjetoOuNull(tabela);
+            }
         }
 
-        public PadraoVO Ultimo(string procName)
+        public virtual int ProximoId()
         {
-            DataTable tabela = MetodosBD.ExecutaProcResultSet(procName, null);
-            return ObjetoOuNull(tabela);
+            using (SqlConnection cx = ConexaoBD.GetConexao())
+            {
+                using (SqlCommand cmd = new SqlCommand(ProcProximoId, cx))
+                {
+                    object valor = cmd.ExecuteScalar();
+                    return Convert.ToInt32(valor) + 1;
+                }
+            }
         }
 
-
-        public PadraoVO Anterior(int atual, string procName)
+        protected PadraoVO ExecutaSqlLocal(string sql, SqlParameter[] parametros)
         {
-            SqlParameter[] parametros = { new SqlParameter("@idAtual", atual) };
-            DataTable tabela = MetodosBD.ExecutaProcResultSet(procName, parametros);
-            return ObjetoOuNull(tabela);
-        }
+            DataTable tabela = MetodosBD.ExecutaSelectProc(sql, parametros);
 
-        public PadraoVO Proximo(int atual, string procName)
-        {
-            SqlParameter[] parametros = { new SqlParameter("@idAtual", atual) };
-            DataTable tabela = MetodosBD.ExecutaProcResultSet(procName, parametros);
-            return ObjetoOuNull(tabela);
-        }
-
-
-        private PadraoVO ObjetoOuNull(DataTable tabela)
-        {
             if (tabela.Rows.Count == 0)
                 return null;
             else
@@ -164,40 +89,33 @@ namespace Library.DAO
         }
 
 
-        public static int ProximoId(string procName)
+        public virtual PadraoVO Primeiro()
         {
-            string resposta = MetodosBD.ExecutaProcedureComRetorno(procName, null);
-            return Convert.ToInt32(resposta);
+            return ExecutaSqlLocal(ProcPrimeiro, null);
         }
 
-
-        /*public static DataTable Consulta()
+        public virtual PadraoVO Ultimo()
         {
-            List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("descricao", descricao.Trim()));
+            return ExecutaSqlLocal(ProcUltimo, null);
+        }
 
-            if (data.Replace("/", "").Trim().Length > 0)
-                parametros.Add(new SqlParameter("@data", data));
-            else
-                parametros.Add(new SqlParameter("@data", DBNull.Value));
+        public virtual PadraoVO Anterior(int atual)
+        {
+            SqlParameter[] p =
+            {
+                new SqlParameter("current", atual)
+            };
+            return ExecutaSqlLocal(ProcAnterior, p);
+        }
 
-            if (preco.Trim().Length > 0)
-                parametros.Add(new SqlParameter("@preco", Convert.ToDouble(preco)));
-            else
-                parametros.Add(new SqlParameter("@preco", DBNull.Value));
-
-            if (jogoId.Trim().Length > 0)
-                parametros.Add(new SqlParameter("@id", Convert.ToInt32(jogoId)));
-            else
-                parametros.Add(new SqlParameter("@id", DBNull.Value));
-
-            if (categoria > 0)
-                parametros.Add(new SqlParameter("@categoria", categoria));
-            else
-                parametros.Add(new SqlParameter("@categoria", DBNull.Value));
-
-            return Metodos.ExecutaProcResultSet("spConsultaAvancada", parametros.ToArray());
-        }*/
+        public virtual PadraoVO Proximo(int atual)
+        {
+            SqlParameter[] p =
+            {
+                new SqlParameter("current", atual)
+            };
+            return ExecutaSqlLocal(ProcProximo, p);
+        }            
 
     }
 }

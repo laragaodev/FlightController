@@ -80,3 +80,27 @@ C:\Users\Admin\Documents\GitHub\flight-controller\flight-controller\FlightContro
 C:\Users\Admin\Documents\GitHub\flight-controller\flight-controller\FlightController\obj\Debug\FlightController.csproj.CopyComplete
 C:\Users\Admin\Documents\GitHub\flight-controller\flight-controller\FlightController\obj\Debug\FlightController.exe
 C:\Users\Admin\Documents\GitHub\flight-controller\flight-controller\FlightController\obj\Debug\FlightController.pdb
+C:\Users\USUARIO\Videos\Nova pasta\FlightController\FlightController\obj\Debug\FlightController.frRegAircraft.resources
+C:\Users\USUARIO\Videos\Nova pasta\FlightController\FlightController\obj\Debug\FlightController.frRegFlight.resources
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\FlightController\obj\Debug\FlightController.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\FlightController\obj\Debug\FlightController.exe
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\FlightController\obj\Debug\FlightController.pdb
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\FlightController\bin\Debug\FlightController.exe.config
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\FlightController\bin\Debug\FlightController.exe
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\FlightController\bin\Debug\FlightController.pdb
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\FlightController\bin\Debug\Library.dll
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\FlightController\bin\Debug\Library.pdb
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\FlightController\obj\Debug\FlightController.frLogin.resources
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\FlightController\obj\Debug\FlightController.frMenu.resources
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\FlightController\obj\Debug\FlightController.frPadrao.resources
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\FlightController\obj\Debug\FlightController.frRegAircraft.resources
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\FlightController\obj\Debug\FlightController.frRegFlight.resources
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\FlightController\obj\Debug\FlightController.frRegPilot.resources
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\FlightController\obj\Debug\FlightController.frSearchAircraft.resources
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\FlightController\obj\Debug\FlightController.frSearchFlight.resources
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\FlightController\obj\Debug\FlightController.frSearchPadrao.resources
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\FlightController\obj\Debug\FlightController.frSearchPilot.resources
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\FlightController\obj\Debug\FlightController.Properties.Resources.resources
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\FlightController\obj\Debug\FlightController.csproj.GenerateResource.cache
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\FlightController\obj\Debug\FlightController.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\FlightController\obj\Debug\FlightController.csproj.CopyComplete

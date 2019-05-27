@@ -117,6 +117,12 @@
     <EmbeddedResource Include="frPadrao.resx">
       <DependentUpon>frPadrao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frRegAircraft.resx">
+      <DependentUpon>frRegAircraft.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frRegFlight.resx">
+      <DependentUpon>frRegFlight.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frRegPilot.resx">
       <DependentUpon>frRegPilot.cs</DependentUpon>
     </EmbeddedResource>
