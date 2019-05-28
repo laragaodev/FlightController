@@ -66,6 +66,11 @@ namespace Library.DAO
             }
         }
 
+        public DataTable Pesquisa(PadraoVO o)
+        {            
+            return MetodosBD.ExecutaProcResultSet(ProcConsulta, CriaParametros(o));
+        }
+
         public virtual int ProximoId()
         {
             using (SqlConnection cx = ConexaoBD.GetConexao())

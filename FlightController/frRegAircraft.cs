@@ -49,5 +49,11 @@ namespace FlightController
             a.type_Id = Convert.ToInt32(txtTipo.Text);
             return a;
         }
+
+        private void btnPesquisa_Click(object sender, EventArgs e)
+        {
+            frSearchAircraft form = new frSearchAircraft();
+            form.ShowDialog();
+        }
     }
 }

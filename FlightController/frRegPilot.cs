@@ -22,6 +22,8 @@ namespace FlightController
             SugereProximoId = true;            
         }
 
+        string filename = "";
+
         protected override void PreencheTela(PadraoVO o)
         {
             try
@@ -32,6 +34,7 @@ namespace FlightController
                     txtName.Text = (o as PilotVO).Name;
                     txtLicenseId.Text = (o as PilotVO).License_Id.ToString();
                     dtpBirthDate.Value = (o as PilotVO).BirthDate;
+                    pictureBox1.Image = Image.FromFile((o as PilotVO).image_path);
                     if ((o as PilotVO).Gender == 'M')
                         rbMale.Checked = true;
                     else
@@ -61,6 +64,7 @@ namespace FlightController
             p.License_Id = Convert.ToInt32(txtLicenseId.Text);
             p.Gender = rbMale.Checked == true ? 'M' : 'F';
             p.BirthDate = dtpBirthDate.Value;
+            p.image_path = filename;
             return p;
         }
 
@@ -76,7 +80,7 @@ namespace FlightController
             {
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    string filename = ofd.FileName;
+                    filename = ofd.FileName;
                     pictureBox1.Image = Image.FromFile(filename);
                 }
             }

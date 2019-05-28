@@ -68,6 +68,7 @@
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // frSearchPadrao
             // 
@@ -89,10 +90,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.NumericUpDown nudId;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnBuscar;
+        protected System.Windows.Forms.Button btnBuscar;
+        protected System.Windows.Forms.NumericUpDown nudId;
     }
 }

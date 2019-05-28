@@ -104,3 +104,24 @@ C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\F
 C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\FlightController\obj\Debug\FlightController.csproj.GenerateResource.cache
 C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\FlightController\obj\Debug\FlightController.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\FlightController\obj\Debug\FlightController.csproj.CopyComplete
+C:\Projetos\FlightController\FlightController\bin\Debug\FlightController.exe.config
+C:\Projetos\FlightController\FlightController\bin\Debug\FlightController.exe
+C:\Projetos\FlightController\FlightController\bin\Debug\FlightController.pdb
+C:\Projetos\FlightController\FlightController\bin\Debug\Library.dll
+C:\Projetos\FlightController\FlightController\bin\Debug\Library.pdb
+C:\Projetos\FlightController\FlightController\obj\Debug\FlightController.csprojResolveAssemblyReference.cache
+C:\Projetos\FlightController\FlightController\obj\Debug\FlightController.frLogin.resources
+C:\Projetos\FlightController\FlightController\obj\Debug\FlightController.frMenu.resources
+C:\Projetos\FlightController\FlightController\obj\Debug\FlightController.frPadrao.resources
+C:\Projetos\FlightController\FlightController\obj\Debug\FlightController.frRegAircraft.resources
+C:\Projetos\FlightController\FlightController\obj\Debug\FlightController.frRegFlight.resources
+C:\Projetos\FlightController\FlightController\obj\Debug\FlightController.frRegPilot.resources
+C:\Projetos\FlightController\FlightController\obj\Debug\FlightController.frSearchAircraft.resources
+C:\Projetos\FlightController\FlightController\obj\Debug\FlightController.frSearchFlight.resources
+C:\Projetos\FlightController\FlightController\obj\Debug\FlightController.frSearchPadrao.resources
+C:\Projetos\FlightController\FlightController\obj\Debug\FlightController.frSearchPilot.resources
+C:\Projetos\FlightController\FlightController\obj\Debug\FlightController.Properties.Resources.resources
+C:\Projetos\FlightController\FlightController\obj\Debug\FlightController.csproj.GenerateResource.Cache
+C:\Projetos\FlightController\FlightController\obj\Debug\FlightController.csproj.CoreCompileInputs.cache
+C:\Projetos\FlightController\FlightController\obj\Debug\FlightController.exe
+C:\Projetos\FlightController\FlightController\obj\Debug\FlightController.pdb

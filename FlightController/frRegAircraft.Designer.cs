@@ -34,6 +34,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
+            // btnPesquisa
+            // 
+            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
+            // 
             // txtModelo
             // 
             this.txtModelo.Location = new System.Drawing.Point(254, 103);

@@ -22,13 +22,9 @@ namespace FlightController
         public bool SugereProximoId { get; set; } = false;
 
         public frPadrao()
-        {
-            if (!EstaEmModoDev()){}
-            InitializeComponent();
+        {            
+            InitializeComponent();           
         }
-
-
-
 
         protected virtual void PreencheTela(PadraoVO o)
         {
@@ -235,7 +231,7 @@ namespace FlightController
 
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
-
+            //overwritten
         }
 
         private void frPadrao_Load(object sender, EventArgs e)
@@ -245,6 +241,13 @@ namespace FlightController
                 btnPrimeiro.PerformClick();
                 AlteraParaModo(EnumModoOperacao.Navegacao);
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frMenu f = new frMenu();
+            f.Show();
         }
     }
 }

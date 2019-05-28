@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library.VO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,15 @@ namespace FlightController
         public frSearchPilot()
         {
             InitializeComponent();
+        }
+
+        protected override PadraoVO PreencheObj()
+        {
+            PilotVO p = new PilotVO();
+            p.Id = (int)nudId.Value;
+            p.Name = txtNome.Text;
+            p.License_Id = int.Parse(txtLicenseId.Text);
+            return p;
         }
     }
 }

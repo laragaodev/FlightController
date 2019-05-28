@@ -72,5 +72,10 @@ namespace FlightController
             return f;
         }
 
+        private void btnPesquisa_Click(object sender, EventArgs e)
+        {
+            frRegFlight form = new frRegFlight();
+            form.ShowDialog();
+        }
     }
 }

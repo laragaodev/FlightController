@@ -30,3 +30,9 @@ C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\L
 C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\Library\obj\Debug\Library.dll
 C:\Users\Admin\Documents\Sandbox Development\FlightController\FlightController\Library\obj\Debug\Library.pdb
+C:\Projetos\FlightController\Library\bin\Debug\Library.dll
+C:\Projetos\FlightController\Library\bin\Debug\Library.pdb
+C:\Projetos\FlightController\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
+C:\Projetos\FlightController\Library\obj\Debug\Library.dll
+C:\Projetos\FlightController\Library\obj\Debug\Library.pdb
+C:\Projetos\FlightController\Library\obj\Debug\Library.csprojResolveAssemblyReference.cache
